@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-dark navbar-expand-lg text-bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand brandGradient" href="./index.html">EMS2.0</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./EMployees.html">EMployees</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="./jobs.html" aria-disabled="true">jobs</a>
+                    </li>
+                </ul>
+                <form class="d-flex gap-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for..."
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-success" type="button" id="button-addon2"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+
+                    </div>
+                    <div class="vr text-white"></div>
+                    <div class="d-grid">
+                        <a href="./index.html" class="btn btn-warning"> <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                                <path d="M7.5 1v7h1V1h-1z" />
+                                <path
+                                    d="M3 8.812a4.999 4.999 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812z" />
+                            </svg></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-3">
+        <div class="row justify-content-center  ">
+            <div class="col-md-2">
+
+                <ul class="list-group shadow  mb-3 ">
+                    <li class="list-group-item text-bg-primary active"> Employee Data</li>
+                    <button type="button" class="list-group-item list-group-item-action btn btn-light "
+                        data-bs-toggle="modal" data-bs-target="#exampleModal-4" data-bs-whatever="@getbootstrap">Add
+                        Employee
+                    </button>
+
+                    <div class="modal fade" style="backdrop-filter: blur(5px);" data-bs-backdrop="static"
+                        id="exampleModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header text-bg-dark">
+                                    <h5 class="modal-title  " id="exampleModalLabel-4">Add Employee Details</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <input type="date" class="form-control " id="">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                            <input type="text" class="form-control me-3" placeholder="First Name" id="">
+                                            <input type="text" class="form-control" placeholder="Last Name" id="">
+                                        </div>
+                                        <div class="mb-3 d-flex">
+                                            <input type="email" class="form-control me-3" placeholder="Email ID"
+                                                required id="">
+                                            <input type="number" class="form-control" placeholder="Phone Number" id="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <select name="" id="" class="form-select">
+                                                <option value="0" selected disabled>select job for employee
+                                                </option>
+                                                <option value="1">Web Developer</option>
+                                                <option value="2">Ux</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-success w-75">Add
+                                                Employee</button>
+                                            <button type="button" class="btn btn-warning mx-3"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </ul>
+                <ul class="list-group shadow mb-3">
+                    <li class="list-group-item text-bg-primary active"> Related Links</li>
+                    <a href="./jobs.html" class="list-group-item list-group-item-action">Jobs List</a>
+
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <div style="overflow-x: auto;">
+                    <table class="table table-bordered caption-top table-sm">
+                        <caption class="text-bg-dark text-center rounded-top-2">Employees list</caption>
+                        <thead class="table-secondary">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Employee ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email ID</th>
+                                <th scope="col">Details</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="align-middle">
+                                <td scope="row">1</td>
+                                <td>741</td>
+                                <td>John</td>
+                                <td>Johndoe@gmail.com</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal-3"
+                                        data-bs-whatever="@getbootstrap">Details</button>
+
+                                    <div class="modal fade" id="exampleModal-3" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header text-bg-dark">
+                                                    <h5 class="modal-title  " id="exampleModalLabel-3">Employee Details
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body m-0 p-0">
+                                                    <table class="table table-bordered">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="w-50 p-2">ID</th>
+                                                                <td class="p-2">1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Employee ID</th>
+                                                                <td>7418</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>first Name</th>
+                                                                <td>JOhn</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>last Name</th>
+                                                                <td>Doe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Email ID</th>
+                                                                <td>Johndoe@gmail.com</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Phone Number</th>
+                                                                <td>741852963</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Job</th>
+                                                                <td>Graphic Designer</td>
+                                                            </tr>
+                                                            <tr class="border-bottom-0">
+                                                                <th>Joining Data</th>
+                                                                <td>22nd July, 2023</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-warning "
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal-2"
+                                                        data-bs-whatever="@getbootstrap">Edit Details</button>
+                                                    <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal-2" data-bs-whatever="@getbootstrap">Edit
+                                    </button>
+
+                                    <div class="modal fade" id="exampleModal-2" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header text-bg-dark">
+                                                    <h5 class="modal-title  " id="exampleModalLabel-2">Employee Details
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="mb-3">
+                                                            <input type="date" class="form-control" value="2009-12-09"
+                                                                id="">
+                                                        </div>
+                                                        <div class="mb-3 d-flex">
+                                                            <input type="text" class="form-control me-3" value="John"
+                                                                id="">
+                                                            <input type="text" class="form-control" value="Doe" id="">
+                                                        </div>
+                                                        <div class="mb-3 d-flex">
+                                                            <input type="email" - class="form-control me-3"
+                                                                value="johndoe@gmail.com" required id="">
+                                                            <input type="number" class="form-control" value="7418529632"
+                                                                id="">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <select name="" id="" class="form-select">
+                                                                <option value="0" selected disabled>Graphic Designer
+                                                                </option>
+                                                                <option value="1">Web Designer</option>
+                                                                <option value="2">Ux</option>
+                                                            </select>
+                                                        </div>
+                                                        <div>
+                                                            <button type="button"
+                                                                class="btn btn-success w-75 mb-2">Update
+                                                                Employee</button>
+                                                            <button type="button"
+                                                                class="btn btn-warning ms-2 mb-2">Discard</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Delete
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <label class="modal-title fs-4 me-5" id="exampleModalLabel">Do you
+                                                        want
+                                                        to
+                                                        delete
+                                                        <strong>"John Doe"</strong>?
+                                                    </label>
+                                                    <button type="button" class="btn-close " data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-footer d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-danger">YES!</button>
+                                                    <button type="button" class="btn btn-warning"
+                                                        data-bs-dismiss="modal">Nope, Go back</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
+                                <td scope="row">1</td>
+                                <td>741</td>
+                                <td>John</td>
+                                <td>Johndoe@gmail.com</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal-3"
+                                        data-bs-whatever="@getbootstrap">Details</button>
+
+                                    <div class="modal fade" id="exampleModal-3" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header text-bg-dark">
+                                                    <h5 class="modal-title  " id="exampleModalLabel-3">Employee Details
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body m-0 p-0">
+                                                    <table class="table table-bordered">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="w-50 p-2">ID</th>
+                                                                <td class="p-2">1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Employee ID</th>
+                                                                <td>7418</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>first Name</th>
+                                                                <td>JOhn</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>last Name</th>
+                                                                <td>Doe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Email ID</th>
+                                                                <td>Johndoe@gmail.com</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Phone Number</th>
+                                                                <td>741852963</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Job</th>
+                                                                <td>Graphic Designer</td>
+                                                            </tr>
+                                                            <tr class="border-bottom-0">
+                                                                <th>Joining Data</th>
+                                                                <td>22nd July, 2023</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-warning "
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal-2"
+                                                        data-bs-whatever="@getbootstrap">Edit Details</button>
+                                                    <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal-2" data-bs-whatever="@getbootstrap">Edit
+                                    </button>
+
+                                    <div class="modal fade" id="exampleModal-2" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header text-bg-dark">
+                                                    <h5 class="modal-title  " id="exampleModalLabel-2">Employee Details
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="mb-3">
+                                                            <input type="date" class="form-control" value="2009-12-09"
+                                                                id="">
+                                                        </div>
+                                                        <div class="mb-3 d-flex">
+                                                            <input type="text" class="form-control me-3" value="John"
+                                                                id="">
+                                                            <input type="text" class="form-control" value="Doe" id="">
+                                                        </div>
+                                                        <div class="mb-3 d-flex">
+                                                            <input type="email" - class="form-control me-3"
+                                                                value="johndoe@gmail.com" required id="">
+                                                            <input type="number" class="form-control" value="7418529632"
+                                                                id="">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <select name="" id="" class="form-select">
+                                                                <option value="0" selected disabled>Graphic Designer
+                                                                </option>
+                                                                <option value="1">Web Designer</option>
+                                                                <option value="2">Ux</option>
+                                                            </select>
+                                                        </div>
+                                                        <div>
+                                                            <button type="button"
+                                                                class="btn btn-success w-75 mb-2">Update
+                                                                Employee</button>
+                                                            <button type="button"
+                                                                class="btn btn-warning ms-2 mb-2">Discard</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Delete
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <label class="modal-title fs-4 me-5" id="exampleModalLabel">Do you
+                                                        want
+                                                        to
+                                                        delete
+                                                        <strong>"John Doe"</strong>?
+                                                    </label>
+                                                    <button type="button" class="btn-close " data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-footer d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-danger">YES!</button>
+                                                    <button type="button" class="btn btn-warning"
+                                                        data-bs-dismiss="modal">Nope, Go back</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="align-middle">
+                                <td scope="row">1</td>
+                                <td>741</td>
+                                <td>John</td>
+                                <td>Johndoe@gmail.com</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal-3"
+                                        data-bs-whatever="@getbootstrap">Details</button>
+
+                                    <div class="modal fade" id="exampleModal-3" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header text-bg-dark">
+                                                    <h5 class="modal-title  " id="exampleModalLabel-3">Employee Details
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body m-0 p-0">
+                                                    <table class="table table-bordered">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="w-50 p-2">ID</th>
+                                                                <td class="p-2">1</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Employee ID</th>
+                                                                <td>7418</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>first Name</th>
+                                                                <td>JOhn</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>last Name</th>
+                                                                <td>Doe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Email ID</th>
+                                                                <td>Johndoe@gmail.com</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Phone Number</th>
+                                                                <td>741852963</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Job</th>
+                                                                <td>Graphic Designer</td>
+                                                            </tr>
+                                                            <tr class="border-bottom-0">
+                                                                <th>Joining Data</th>
+                                                                <td>22nd July, 2023</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-warning "
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal-2"
+                                                        data-bs-whatever="@getbootstrap">Edit Details</button>
+                                                    <button type="button" class="btn btn-primary"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal-2" data-bs-whatever="@getbootstrap">Edit
+                                    </button>
+
+                                    <div class="modal fade" id="exampleModal-2" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header text-bg-dark">
+                                                    <h5 class="modal-title  " id="exampleModalLabel-2">Employee Details
+                                                    </h5>
+                                                    <button type="button" class="btn-close btn-close-white"
+                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="mb-3">
+                                                            <input type="date" class="form-control" value="2009-12-09"
+                                                                id="">
+                                                        </div>
+                                                        <div class="mb-3 d-flex">
+                                                            <input type="text" class="form-control me-3" value="John"
+                                                                id="">
+                                                            <input type="text" class="form-control" value="Doe" id="">
+                                                        </div>
+                                                        <div class="mb-3 d-flex">
+                                                            <input type="email" - class="form-control me-3"
+                                                                value="johndoe@gmail.com" required id="">
+                                                            <input type="number" class="form-control" value="7418529632"
+                                                                id="">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <select name="" id="" class="form-select">
+                                                                <option value="0" selected disabled>Graphic Designer
+                                                                </option>
+                                                                <option value="1">Web Designer</option>
+                                                                <option value="2">Ux</option>
+                                                            </select>
+                                                        </div>
+                                                        <div>
+                                                            <button type="button"
+                                                                class="btn btn-success w-75 mb-2">Update
+                                                                Employee</button>
+                                                            <button type="button"
+                                                                class="btn btn-warning ms-2 mb-2">Discard</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Delete
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" data-bs-backdrop="static"
+                                        style="backdrop-filter: blur(5px);" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <label class="modal-title fs-4 me-5" id="exampleModalLabel">Do you
+                                                        want
+                                                        to
+                                                        delete
+                                                        <strong>"John Doe"</strong>?
+                                                    </label>
+                                                    <button type="button" class="btn-close " data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-footer d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-danger">YES!</button>
+                                                    <button type="button" class="btn btn-warning"
+                                                        data-bs-dismiss="modal">Nope, Go back</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
